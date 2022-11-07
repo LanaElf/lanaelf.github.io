@@ -1,0 +1,246 @@
+  @font-face {
+    font-family: Micra;
+    src: url(/fonts/micra.ttf);
+   } 
+  @font-face {
+    font-family: Micra Bold;
+    src: url(/fonts/micra-bold.ttf);
+   } 
+  @font-face {
+    font-family: Sailec;
+    src: url(/fonts/Sailec Medium.ttf);
+   } 
+
+body{
+	margin: 0px;
+	background-color: #e6e5f0;
+}
+header{
+	background: radial-gradient(circle at bottom, #3a3659, #000 80%);
+	height: 180px;
+	overflow: hidden;
+	color: white;
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	position: relative;
+}
+.header-text{
+	font-family: 'Micra Bold', arial;
+	top: 40px;
+	left: 40%;
+	position: fixed;
+}
+h1{
+	font-size: 1.4em;
+	line-height: 1.6em;
+	text-align: center;
+	color: white;
+	font-family: 'Micra Bold', arial;
+	padding-top: 2.5em;
+	text-shadow: 0px 0px 10px black;
+}
+.text-left, .text-right {
+	font-family: 'Micra', arial;
+	font-size: 10px;
+	padding-top: 8.5em;
+}
+
+h2{
+	text-align: center;
+	color: #222037;
+	font-family: 'Micra', arial;
+	font-size: 1em;
+	line-height: 1.7em;
+	padding-bottom: 1em;
+}
+.stars{
+	position: absolute;
+}
+main{
+	padding-top: 3em;
+}
+.gallery-item{
+	display: grid;
+	justify-content: center;
+	padding: 1em 0;
+}
+a.photo-box img{
+	box-shadow: 0px 10px 20px darkgrey;
+	max-width: 800px;
+}
+.photo-box{
+	text-decoration: none;
+	color: black;
+}
+.item-header{
+	justify-content: center;
+	display: flex;
+	font-family: micra bold;
+	font-size: 0.85em;
+	padding: 1em 0;
+	max-width: 800px;
+	text-align: center;
+}
+.purchase-link{
+	color: #222037;
+	text-align: center;
+	font-family: 'Micra', arial;
+	font-size: 12px;
+	padding: 1em 0;
+}
+footer{
+	background: radial-gradient(circle at bottom, #3a3659, #000 80%);
+	height: 140px;
+	overflow: hidden;
+	color: white;	
+	width: 100%;
+	position: relative;
+	justify-content: center;
+	display: grid;
+}
+.contacts{
+	display: grid;
+	justify-content: center;
+	margin-top: 1.5em;
+	font-family: 'Micra', arial;
+	font-size: 0.8em;
+	line-height: 1.5em;
+
+}
+.contacts>a{
+	font-family: 'Sailec', arial;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none ;
+	color: white;
+	justify-content: center;
+	display: flex;
+
+}
+.sign{
+	font-size: 0.6em;
+	margin-top: 1.5em;
+	font-family: 'Micra', arial;
+}
+#arrowTop {
+      height: 3em;
+      width: 3em;
+      position: fixed;
+      top: 1em;
+      left: 95%;
+      cursor: pointer;
+      background: url(/images/up-arrow-button.png);
+      background-size: contain;
+      z-index: 998;
+    }
+
+.lightbox{
+	display: none;
+	position: fixed;
+  	z-index: 999;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	background: rgba(0, 0, 0, 0.8);
+}
+.lightbox:target {
+  display: block;
+}
+.lightbox span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+@media (min-width: 800px) and (max-width: 1200px) {
+	.text-left, .text-right{
+		font-size: 6.5px;
+		padding-top: 13em;
+	}
+}
+@media (max-device-width: 799px) and (-webkit-min-device-pixel-ratio: 2.5),
+		(max-device-width: 799px) and (min--moz-device-pixel-ratio: 2.5),
+		(max-device-width: 799px) and (-o-min-device-pixel-ratio: 2.5)
+		(max-device-width: 799px) and (min-device-pixel-ratio: 2.5),
+		(max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
+		(max-device-width: 600px) and (min--moz-device-pixel-ratio: 2),
+		(max-device-width: 600px) and (-o-min-device-pixel-ratio: 2),
+		(max-device-width: 600px) and (min-device-pixel-ratio: 2){
+
+	header{
+		display: grid;
+		justify-content: center;
+		height: 20em;
+
+	}
+	.text-left, .text-right{
+		padding-top: 0;
+		display: flex;
+		justify-content: center;
+		line-height: auto;
+		font-size: 0.95em;
+		text-shadow: 0 0 10px black;
+		position: relative;
+	}
+	h1{
+		padding: 0;
+		font-size: 2.5em;
+		position: relative;
+		top: 0.6em;
+	}
+	.text-right
+	{
+		bottom: 3em;
+	}
+	.text-left{
+		top: 6.1em;
+	}
+	h2{
+		font-size: 1.4em;
+		line-height: 1.7em;
+	}
+	.item-header{
+		font-size: 1.2em;
+	}
+	#arrowTop{
+		height: 6em;
+      	width: 6em;
+      	left: 85%;
+      	bottom: 2em;
+	}
+	.purchase-link{
+		font-size: 1em;
+		padding: 2em 0;
+	}
+	.item-header{
+		font-size: 1.5em;
+		max-width: 800px;
+	}
+	.contacts{
+		font-size: 1.2em;
+		margin-top: 2em;
+		line-height: 2em;
+	}
+	.contacts>a{
+		font-size: 1.8em;
+	}
+	.sign{
+		font-size: 1em;
+	}
+	footer{
+		height: 15em;
+	}
+}
+@media (max-device-width: 599px) and (-webkit-min-device-pixel-ratio: 3),
+		(max-device-width: 599px) and (min--moz-device-pixel-ratio: 3),
+		(max-device-width: 599px) and (-o-min-device-pixel-ratio: 3)
+		(max-device-width: 599px) and (min-device-pixel-ratio: 3){
+
+	
+}
