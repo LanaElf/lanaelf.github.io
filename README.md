@@ -1,5 +1,6 @@
 # lanaelf.github.io
-https://lanaelf.github.io/NovikovGallery/ 
+
+# https://lanaelf.github.io/NovikovGallery/ 
 
 Этот адаптивный одностраничный сайт представляет собой персональную фотогалерею.
 
@@ -7,4 +8,10 @@ This responsive one page site is a personal photo gallery
 
 
 
-https://lanaelf.github.io/NZT/
+# https://lanaelf.github.io/NZT/
+
+Главная страница сайта, продающего препарат NZT (вымышленный продукт), адаптированная для смартфонов и планшетов.
+
+При прокрутке страницы вниз шапка меняет внешний вид и фиксируется вверху страницы. 
+
+Выпадающее меню. На смартфонах сворачивается в "гамбургер". Пункты меню раскрываются в виде аккордеона.
