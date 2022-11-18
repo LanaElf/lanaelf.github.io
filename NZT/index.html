@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="images/nzt.ico" type="image/x-icon"> 
+		<title>NZT-48</title>
+  		<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">-->
+  		<link rel="stylesheet" href="styles.css">
+  		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script> 
+		<script src="jquery.scrollbox.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+	<header>
+		<div class="header_top">
+			<div class="header-left">
+				<div class="logo"><img class="logo" src="images/logo.png" alt="Логотип"></div>
+				<div class="name">NZT-48</div>
+				<nav class="menu">
+					<ul id="ddmenu" class="hamburger">
+						<li>
+							<a id="for-doctor" onclick="ddmenu1()">
+								<div id="arrow-doctor" class="arrow_down accordeon">Врачу</div>
+							</a>
+
+							<!--hidden-->
+							<a href="#for-doctor" id="for-doctor-menu" >
+								<ul class="drop_down panel">
+									<li>Материалы для изучения</li>
+									<li>Эффективность и безопасность</li>
+									<li>Вопрос/Ответ</li>
+									<li>Мнения специалистов</li>
+									<li>Информированное согласие</li>
+									<li>Дистрибьюторы</li>
+									<li>Обучение</li>
+									<li>Исследования и публикации</li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<a  id="for-patient" onclick="ddmenu2()">
+								<div id="arrow-patient" class="arrow_down accordeon">Пациенту</div>
+							</a>
+
+							<!--hidden-->
+							<a href="#for-patient" id="for-patient-menu">
+								<ul class="drop_down panel">
+									<li>Эффективность и безопасность</li>
+									<li>Просто о сложном</li>
+									<li>Клиники</li>
+									<li>Мнения специалистов</li>
+									<li>Вопрос/Ответ</li>
+									<li>Аптеки</li>
+								</ul>	
+							</a>							
+						</li>
+						<li>
+							<a  id="about-nzt" onclick="ddmenu3()">
+								<div id="arrow-nzt" class="arrow_down accordeon"> О препарате </div>
+							</a>
+							<a href="#about-nzt" id="about-nzt-menu">
+								<ul class="drop_down panel">
+									<li>История</li>
+									<li>Состав препарата</li>
+									<li>Инструкция</li>
+									<li>Механизм действия</li>
+									<li>Регистрационное удостоверение</li>
+									<li>Технология производства</li>
+								</ul>
+							</a>
+						</li>
+						<li>Журнал</li>
+						<li>Контакты</li>
+						<li>
+							<div class="search"><img class="search_img" src="images/search.png" alt="Поиск"></div>
+						</li>
+					</ul>
+				</nav>
+				<a href="javascript:void(0);" class="icon" onclick="hamburger()">
+					<i class="fa fa-bars"></i>
+  				</a>
+			</div>
+			<div class="header-right">
+				<div class="verification">Проверить оригинальность</div>
+				<div class="purchase">Купить</div>
+			</div>
+		</div>
+		<h1>Путь к богатству
+			<br>и могуществу
+		</h1>
+		<div class="about_button">
+				О препарате
+			<div class="arrow_right"></div>
+		</div>
+	</header>
+
+	<main>
+		<section class="menu2">
+			<ul>
+				<li>История<div class="arrow_right3"></div></li>
+				<li>Технология производства<div class="arrow_right3"></div></li>
+				<li>Инструкция<div class="arrow_right3"></div></li>
+				<li>Состав препарата<div class="arrow_right3"></div></li>
+				<li>Механизм действия<div class="arrow_right3"></div></li>
+				<li>Регистрационное удостоверение<div class="arrow_right3"></div></li>
+			</ul>
+		</section>
+		<section class="about">
+			<h2>
+				Препарат  NZT-48
+			</h2>
+			<div class="about_content">
+				<p>Действует на клеточном уровне, улучшая метаболизм клеток и восстанавливая их нормальные функции.</p>
+				<p>Благодаря этому достигается широчайший спектр медицинских показаний и становится возможным применение в самых разных областях медицины.</p>
+			</div>
+		</section>
+		<section class="cards">
+			<ul>
+				<li>
+					<h3>Эффективность</h3>
+					<div class="cards_content">Доказана многочисленными клиническими и лабораторными исследованиями</div>
+					<div class="arrow">
+						<div class="arrow_right2"></div>
+					</div>
+				</li>
+				<li>
+					<h3>Безопасность</h3>
+					<div class="cards_content">Не содержит гормонов, ферментов, витаминов и других биогенных стимуляторов</div>
+					<div class="arrow">
+						<div class="arrow_right2"></div>
+					</div>
+				</li>
+				<li>
+					<h3>Высокие технологии</h3>
+					<div class="cards_content">При производстве используются самые передовые технологии отбора, хранения и очистки</div>
+					<div class="arrow">
+						<div class="arrow_right2"></div>
+					</div>
+				</li>
+				<li>
+					<h3>Уникальный состав</h3>
+					<div class="cards_content">Сбалансированный состав биомолекул, так как соотношение компонентов создано природой, характерно для здоровой ткани и не просто стопроцентно усваивается, а встраивается в собственный метаболизм пациента</div>
+					<div class="arrow">
+						<div class="arrow_right2"></div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="reviews">
+	
+			<div id="arrows-btn" class="arrows">
+				<button class="btn" id="arrow-backward"><img src="images/arrow_left3.png" alt="Листать влево"></button>
+				<button class="btn" id="arrow-forward"><img src="images/arrow_right3.png" alt="Листать вправо"></button>
+			</div>
+			<div id="reviews" class="reviews_scrollbox">
+				<ul>
+					<li>
+						<div id="review1" class="review">
+							<div class="review_left"><img src="images/review1.png" alt="Фото отзыва"></div>
+							<div id="review-right1" class="review_right">
+								<div class="review_content">
+									Что это за таблетка?! Я был предельно собран. Я не курил уже 6 часов, я не ел.
+								</div>
+								<div class="review_date">
+									5 апреля
+								</div>
+								<div class="about_button2">
+									О NZT-48<div class="arrow_right"></div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div id="review2" class="review">
+							<div class="review_left"><img src="images/review2.png" alt="Фото отзыва"></div>
+							<div id="review-right2" class="review_right">
+								<div class="review_content">
+									Я был таким воздержанным и чистым… Что это? Лекарство для тех, кто заботиться о банальной чистоте? Я не был обкурен, я не был пьян, я был чистым!
+								</div>
+								<div class="review_date">
+									17 апреля
+								</div>
+								<div class="about_button2">
+									О побочных<div class="arrow_right"></div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section  class="opinions">
+			<h2>
+				Мы изучаем и принимаем во внимание<br>все мнения ведущих специалистов отрасли
+			</h2>
+			<div class="opinions_top">
+				<div class="arrows">
+					<button class="btn" id="arrow-backward2"><img src="images/arrow_left3.png" alt="Листать влево"></button>
+					<button class="btn" id="arrow-forward2"><img src="images/arrow_right3.png" alt="Листать вправо"></button>
+				</div>
+				<h4>Мнения специалистов</h4>
+			</div>
+			<div id="opinions" class="opinions_scrollbox opinions_container">
+				
+						<ul>
+							<li id="opinion1" class="opinion">
+								<div class="specialist">
+									<div class="specialist_left">
+										<div class="specialist_name">
+											Эдди<br>Морро
+										</div>
+										<div class="specialist_about">
+											Сенатор, заслуженный деятель науки РФ, профессор, доктор медицинских наук, руководитель отдела патоморфологии ФГБНУ «НИИАГиР им. Д.О. Отта», г.Санкт-Петербург
+										</div>
+									</div>						
+									<div class="specialist_photo">
+										<img src="images/specialist1.png" alt="Фото специалиста">
+									</div>
+								</div>
+								<div class="specialist_opinion">
+									Правовое государство фактически интегрирует культ личности. Социализм, на первый взгляд, заставляет бесцветный культ личности.
+								</div>
+								<div class="opinion_video">
+									<div class="opinion_video_button">Смотреть видео</div>
+									<div class="arrow_right"></div>
+								</div>
+							</li>
+
+							<li id="opinion2" class="opinion">
+								<div class="specialist">
+									<div class="specialist_left">
+										<div class="specialist_name">
+											Эдди<br>Морро
+										</div>
+										<div class="specialist_about">
+											Сенатор, заслуженный деятель науки РФ, профессор, доктор медицинских наук, руководитель отдела патоморфологии ФГБНУ «НИИАГиР им. Д.О. Отта», г.Санкт-Петербург
+										</div>
+									</div>
+									<div class="specialist_photo">
+										<img src="images/specialist1.png" alt="Фото специалиста">
+									</div>
+								</div>
+								<div class="specialist_opinion">
+									Правовое государство фактически интегрирует культ личности. Социализм, на первый взгляд, заставляет бесцветный культ личности.
+								</div>
+								<div class="opinion_video">
+									<div class="opinion_video_button">Смотреть видео</div>
+									<div class="arrow_right"></div>
+								</div>
+							</li>
+
+							<li id="opinion3" class="opinion">
+								<div class="specialist">
+									<div class="specialist_left">
+										<div class="specialist_name">
+											Эдди<br>Морро
+										</div>
+										<div class="specialist_about">
+											Сенатор, заслуженный деятель науки РФ, профессор, доктор медицинских наук, руководитель отдела патоморфологии ФГБНУ «НИИАГиР им. Д.О. Отта», г.Санкт-Петербург
+										</div>
+									</div>
+									<div class="specialist_photo">
+										<img src="images/specialist1.png" alt="Фото специалиста">
+									</div>
+								</div>
+								<div class="specialist_opinion">
+									Правовое государство фактически интегрирует культ личности. Социализм, на первый взгляд, заставляет бесцветный культ личности.
+								</div>
+								<div class="opinion_video">
+									<div class="opinion_video_button">Смотреть видео</div>
+									<div class="arrow_right"></div>
+								</div>
+							</li>
+						</ul>
+				
+			</div>	
+		</section>
+	</main>
+	<footer>
+		<h3>Путь к богатству<br>и могуществу</h3>
+		<div class="footer_bottom">
+			<div class="sign">
+				© «NZT-48», 2022
+			</div>
+			<div class="agreement">
+				Согласие на обработку персональных данных
+			</div>
+			<div class="privacy_policy">
+				Политика конфиденциальности
+			</div>
+		</div>
+	</footer>
+		<!--открытие выпадающего меню и замена типа стрелки/ opening drop-down menu and replace type of arrow-->
+		<script type="text/javascript">
+
+   			function ddmenu1()
+   			{
+   				//открытие/закрытие блока "врачу"/ open/close block "for Doctor"
+   				const forDoctorMenu = document.getElementById("for-doctor-menu");
+   				forDoctorMenu.classList.toggle("for-doctor-menu");
+
+   				//плавность разворачивания меню/menu opening smoothness
+   				let panel = forDoctorMenu.firstElementChild;
+   				if (panel.style.maxHeight)
+   				{
+      				panel.style.maxHeight = null;
+    			} 
+    			else 
+    			{
+      				panel.style.maxHeight = panel.scrollHeight + "px";
+    			};
+   				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
+   				let forPatientMenu = document.getElementById("for-patient-menu");
+   				let arrowPatient = document.getElementById("arrow-patient"); 
+
+   				if (forPatientMenu.classList.contains('for-patient-menu'))
+   				{
+   					forPatientMenu.classList.remove('for-patient-menu');
+   					if (arrowPatient.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowPatient.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowPatient.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowPatient.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowPatient.classList.contains('arrow_down')==true)
+   							{
+   								arrowPatient.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowPatient.classList.contains('arrow_up')==true)
+   								{
+   									arrowPatient.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}
+   				};
+
+   				let aboutNztMenu = document.getElementById("about-nzt-menu");
+   				let arrowNzt = document.getElementById("arrow-nzt"); 
+
+   				if (aboutNztMenu.classList.contains('about-nzt-menu'))
+   				{
+   					aboutNztMenu.classList.remove('about-nzt-menu');
+   					if (arrowNzt.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowNzt.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowNzt.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowNzt.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowNzt.classList.contains('arrow_down')==true)
+   							{
+   								arrowNzt.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowNzt.classList.contains('arrow_up')==true)
+   								{
+   									arrowNzt.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}	
+   				};
+
+   				//соответствующее поведение стрелки/corresponding arrow behavior
+   				const arrowDoctor = document.getElementById("arrow-doctor"); 
+   				
+   				if (arrowDoctor.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowDoctor.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowDoctor.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowDoctor.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowDoctor.classList.contains('arrow_down')==true)
+   						{
+   							arrowDoctor.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowDoctor.classList.contains('arrow_up')==true)
+   							{
+   								arrowDoctor.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}
+   			};	
+
+
+   			function ddmenu2()
+   			{
+   				//открытие/закрытие блока "пациенту"/ open/close block "for patient"
+   				const forPatientMenu = document.getElementById("for-patient-menu");
+   				forPatientMenu.classList.toggle("for-patient-menu");
+
+   				//плавность разворачивания меню/menu opening smoothness
+   				let panel = forPatientMenu.firstElementChild;
+   				if (panel.style.maxHeight)
+   				{
+      				panel.style.maxHeight = null;
+    			} 
+    			else 
+    			{
+      				panel.style.maxHeight = panel.scrollHeight + "px";
+    			};
+
+   				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
+   				let forDoctorMenu = document.getElementById("for-doctor-menu");
+   				let arrowDoctor = document.getElementById("arrow-doctor");
+   				if (forDoctorMenu.classList.contains('for-doctor-menu'))
+   				{
+   					forDoctorMenu.classList.remove('for-doctor-menu');
+   					if (arrowDoctor.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowDoctor.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowDoctor.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowDoctor.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowDoctor.classList.contains('arrow_down')==true)
+   							{
+   								arrowDoctor.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowDoctor.classList.contains('arrow_up')==true)
+   								{
+   									arrowDoctor.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}
+   				};
+   				let aboutNztMenu = document.getElementById("about-nzt-menu");
+   				let arrowNzt = document.getElementById("arrow-nzt"); 
+
+   				if (aboutNztMenu.classList.contains('about-nzt-menu'))
+   				{
+   					aboutNztMenu.classList.remove('about-nzt-menu');
+   					if (arrowNzt.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowNzt.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowNzt.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowNzt.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowNzt.classList.contains('arrow_down')==true)
+   							{
+   								arrowNzt.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowNzt.classList.contains('arrow_up')==true)
+   								{
+   									arrowNzt.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}	
+   				};
+
+   				//соответствующее поведение стрелки/corresponding arrow behavior
+   				const arrowPatient = document.getElementById("arrow-patient"); 
+   				
+   				if (arrowPatient.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowPatient.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowPatient.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowPatient.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowPatient.classList.contains('arrow_down')==true)
+   						{
+   							arrowPatient.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowPatient.classList.contains('arrow_up')==true)
+   							{
+   								arrowPatient.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}	
+
+   			};
+
+   			function ddmenu3()
+   			{
+   				//открытие/закрытие блока "о препарате"/ open/close block "about nzt"
+   				const aboutNztMenu = document.getElementById("about-nzt-menu");
+   				aboutNztMenu.classList.toggle("about-nzt-menu");
+
+   				//плавность разворачивания меню/menu opening smoothness
+   				let panel = aboutNztMenu.firstElementChild;
+   				if (panel.style.maxHeight)
+   				{
+      				panel.style.maxHeight = null;
+    			} 
+    			else 
+    			{
+      				panel.style.maxHeight = panel.scrollHeight + "px";
+    			};
+
+   				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
+   				let forDoctorMenu = document.getElementById("for-doctor-menu");
+   				let arrowDoctor = document.getElementById("arrow-doctor");
+   				if (forDoctorMenu.classList.contains('for-doctor-menu'))
+   				{
+   					forDoctorMenu.classList.remove('for-doctor-menu');
+   					if (arrowDoctor.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowDoctor.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowDoctor.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowDoctor.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowDoctor.classList.contains('arrow_down')==true)
+   							{
+   								arrowDoctor.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowDoctor.classList.contains('arrow_up')==true)
+   								{
+   									arrowDoctor.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}
+   				};
+   				let forPatientMenu = document.getElementById("for-patient-menu");
+   				let arrowPatient = document.getElementById("arrow-patient"); 
+
+   				if (forPatientMenu.classList.contains('for-patient-menu'))
+   				{
+   					forPatientMenu.classList.remove('for-patient-menu');
+   					if (arrowPatient.classList.contains('arrow_down_fixed')==true)
+   					{
+   						arrowPatient.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   					}
+   					else
+   					{
+   						if (arrowPatient.classList.contains('arrow_up_fixed')==true)
+   						{
+   							arrowPatient.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   						}
+   						else
+   						{
+   							if (arrowPatient.classList.contains('arrow_down')==true)
+   							{
+   								arrowPatient.classList.replace('arrow_down','arrow_up');
+   							}
+   							else
+   							{
+   								if (arrowPatient.classList.contains('arrow_up')==true)
+   								{
+   									arrowPatient.classList.replace('arrow_up','arrow_down');
+   								}
+   							}
+   						}
+   					}
+   				};
+
+   				//соответствующее поведение стрелки/corresponding arrow behavior
+   				const arrowNzt = document.getElementById("arrow-nzt"); 
+
+				if (arrowNzt.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowNzt.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowNzt.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowNzt.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowNzt.classList.contains('arrow_down')==true)
+   						{
+   							arrowNzt.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowNzt.classList.contains('arrow_up')==true)
+   							{
+   								arrowNzt.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}
+
+   			};
+
+		</script>
+
+	<!--замена классов для фиксированного меню при скролле/ replacing classes for fixed menu on scroll-->
+		<script type="text/javascript"> 
+			$(document).ready(function() 
+			{
+				var start_pos=$('.header_top').offset().top;
+
+ 				$(window).scroll(function()
+ 				{
+  				if ($(window).scrollTop()>start_pos) 
+  				{
+   					$('.header_top').addClass('fixed');
+     				$('.header-right').addClass('header-right_fixed');
+      				$('.header-left').addClass('header-left_fixed');
+      				$('.name').addClass('name_fixed');
+      				$('.verification').addClass('verification_fixed');
+      				$('.purchase').addClass('purchase_fixed');
+      				$('.arrow_down').addClass('arrow_down_fixed').removeClass('arrow_down') ;
+    				$('.arrow_up').addClass('arrow_up_fixed').removeClass('arrow_up');
+     				$('.drop_down').addClass('drop_down_fixed');
+     				$('.fa').addClass('fa_fixed');
+     				$('.hamburger').addClass('hamburger_fixed');
+   					$(".logo").attr("src", "images/logo2.png");
+     				$(".search_img").attr("src", "images/search2.png");
+  				}
+  				else 
+  				{
+  					$('.header_top').removeClass('fixed');
+  					$('.header-right').removeClass('header-right_fixed');
+  					$('.header-left').removeClass('header-left_fixed');
+  					$('.name').removeClass('name_fixed');
+  					$('.verification').removeClass('verification_fixed');
+  					$('.purchase').removeClass('purchase_fixed');
+  					$('.arrow_down_fixed').addClass('arrow_down').removeClass('arrow_down_fixed');
+  					$('.arrow_up_fixed').addClass('arrow_up').removeClass('arrow_up_fixed') ;
+  					$('.drop_down').removeClass('drop_down_fixed');
+  					$('.fa').removeClass('fa_fixed');
+  					$('.hamburger').removeClass('hamburger_fixed');
+  					$(".logo").attr("src", "images/logo.png");
+  					$(".search_img").attr("src", "images/search.png");
+
+  				}
+  				
+ 				});
+			});
+		</script>
+
+		<!--перелистывание отзывов/flipping reviews-->
+		<script type="text/javascript">
+		var width = $('#reviews').innerWidth();
+		$('#reviews').scrollbox({
+  			direction: 'h',
+  			distance: width,
+  			step: 6,                // Distance of each single step (in pixels)
+    		speed: 32               // Delay after each single step (in milliseconds)
+		});
+		$('#arrow-backward').click(function () {
+  			$('#reviews').trigger('backward');
+		});
+		$('#arrow-forward').click(function () {
+  			$('#reviews').trigger('forward');
+		});
+		</script>
+
+		<!-- прокрутка мнений/scroll of opinions-->
+		<script type="text/javascript">
+		var width = $('.opinion').innerWidth()+30;
+		$('#opinions').scrollbox({
+  			direction: 'h',
+  			distance: width,
+  			step: 3,                // Distance of each single step (in pixels)
+    		speed: 32              // Delay after each single step (in milliseconds)
+		});
+		$('#arrow-backward2').click(function () {
+  			$('#opinions').trigger('backward');
+		});
+		$('#arrow-forward2').click(function () {
+  			$('#opinions').trigger('forward');
+		});
+		</script>
+		<!--меню-гамбургер/menu-hamburger-->
+		<script>
+			function hamburger() 
+			{
+    			var hamburger = document.getElementById("ddmenu");
+    			if (hamburger.classList.contains("hamburger")==true) 
+    			{
+        			hamburger.classList.toggle("responsive");
+    			} 
+
+			}
+		</script>
+	</body>
+</html>
