@@ -405,7 +405,7 @@
     			};
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
-   				function arrowDoctor();
+   				arrowDoctor();
 
    				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
    				let forPatientMenu = document.getElementById("for-patient-menu");
@@ -413,7 +413,7 @@
    				if (forPatientMenu.classList.contains('for-patient-menu'))
    				{
    					forPatientMenu.classList.remove('for-patient-menu');
-   					function arrowPatient();
+   					arrowPatient();
    				};
 
    				let aboutNztMenu = document.getElementById("about-nzt-menu");
@@ -422,7 +422,7 @@
    				if (aboutNztMenu.classList.contains('about-nzt-menu'))
    				{
    					aboutNztMenu.classList.remove('about-nzt-menu');
-   					function arrowNzt();
+   					arrowNzt();
    				};
    			};	
 
@@ -445,20 +445,20 @@
     			};
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
-   				function arrowPatient();
+   				arrowPatient();
 
    				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
    				let forDoctorMenu = document.getElementById("for-doctor-menu");
    				if (forDoctorMenu.classList.contains('for-doctor-menu'))
    				{
    					forDoctorMenu.classList.remove('for-doctor-menu');
-   					function arrowDoctor();
+   					arrowDoctor();
    				};
    				let aboutNztMenu = document.getElementById("about-nzt-menu");
    				if (aboutNztMenu.classList.contains('about-nzt-menu'))
    				{
    					aboutNztMenu.classList.remove('about-nzt-menu');
-   					function arrowNzt();
+   					arrowNzt();
    				};
 
    			};
@@ -481,20 +481,20 @@
     			};
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
-   				function arrowNzt();
+   				arrowNzt();
 
    				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
    				let forDoctorMenu = document.getElementById("for-doctor-menu");
    				if (forDoctorMenu.classList.contains('for-doctor-menu'))
    				{
    					forDoctorMenu.classList.remove('for-doctor-menu');
-   					function arrowDoctor();
+   					arrowDoctor();
    				};
    				let forPatientMenu = document.getElementById("for-patient-menu");
    				if (forPatientMenu.classList.contains('for-patient-menu'))
    				{
    					forPatientMenu.classList.remove('for-patient-menu');
-   					function arrowPatient();
+   					arrowPatient();
    				};
 
    			};
