@@ -387,6 +387,18 @@
    				}
 			};
 
+			//плавность разворачивания меню/menu opening smoothness
+			function smoothness(){
+				if (panel.style.maxHeight)
+   				{
+      				panel.style.maxHeight = null;
+    			} 
+    			else 
+    			{
+      				panel.style.maxHeight = panel.scrollHeight + "px";
+    			}
+			};
+
    			function ddmenu1()
    			{
    				//открытие/закрытие блока "врачу"/ open/close block "for Doctor"
@@ -395,14 +407,7 @@
 
    				//плавность разворачивания меню/menu opening smoothness
    				let panel = forDoctorMenu.firstElementChild;
-   				if (panel.style.maxHeight)
-   				{
-      				panel.style.maxHeight = null;
-    			} 
-    			else 
-    			{
-      				panel.style.maxHeight = panel.scrollHeight + "px";
-    			};
+   				smoothness();
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowDoctor();
@@ -435,14 +440,7 @@
 
    				//плавность разворачивания меню/menu opening smoothness
    				let panel = forPatientMenu.firstElementChild;
-   				if (panel.style.maxHeight)
-   				{
-      				panel.style.maxHeight = null;
-    			} 
-    			else 
-    			{
-      				panel.style.maxHeight = panel.scrollHeight + "px";
-    			};
+   				smoothness();
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowPatient();
@@ -471,14 +469,7 @@
 
    				//плавность разворачивания меню/menu opening smoothness
    				let panel = aboutNztMenu.firstElementChild;
-   				if (panel.style.maxHeight)
-   				{
-      				panel.style.maxHeight = null;
-    			} 
-    			else 
-    			{
-      				panel.style.maxHeight = panel.scrollHeight + "px";
-    			};
+   				smoothness();
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowNzt();
