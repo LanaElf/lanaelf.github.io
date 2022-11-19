@@ -103,6 +103,7 @@ header{
 nav.menu{
   display: inline-block;
   position: relative;
+  z-index: 2;
 }
 nav.menu>ul{
   margin: 10px;
@@ -139,6 +140,7 @@ nav.menu>ul>li{
 .drop_down{
   color: white;
   padding-bottom: 1em;
+  background-color: #353b45;
 }
 .drop_down_fixed{
   color: #252627;
@@ -619,11 +621,11 @@ footer>h3{
 .opinions_container>ul{
   padding: 0;
 }
-.panel{
+/*.panel{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-}
+}*/
 
 @media (min-width: 1800px){
   h1{
@@ -1011,6 +1013,7 @@ footer>h3{
       .reviews_scrollbox{
         overflow-x: scroll;
         scrollbar-width: none;
+        border-radius: 10px;
       }
       .review{
         display: grid;

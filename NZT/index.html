@@ -388,7 +388,7 @@
 			};
 
 			//плавность разворачивания меню/menu opening smoothness
-			function smoothness(panel){
+			/*function smoothness(panel){
 				if (panel.style.maxHeight)
    				{
       				panel.style.maxHeight = null;
@@ -397,7 +397,7 @@
     			{
       				panel.style.maxHeight = panel.scrollHeight + "px";
     			}
-			};
+			};*/
 
    			function ddmenu1()
    			{
@@ -405,16 +405,15 @@
    				const forDoctorMenu = document.getElementById("for-doctor-menu");
    				forDoctorMenu.classList.toggle("for-doctor-menu");
 
-   				//плавность разворачивания меню/menu opening smoothness
+   				/*//плавность разворачивания меню/menu opening smoothness
    				let panel = forDoctorMenu.firstElementChild;
-   				smoothness(forDoctorMenu.firstElementChild);
+   				smoothness(forDoctorMenu.firstElementChild);*/
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowDoctor();
 
    				//проверка, открыты ли другие блоки и их закрытие при необходимости+стрелки/checking if other blocks are open and closing them if necessary+arrows
    				let forPatientMenu = document.getElementById("for-patient-menu");
-
    				if (forPatientMenu.classList.contains('for-patient-menu'))
    				{
    					forPatientMenu.classList.remove('for-patient-menu');
@@ -422,8 +421,6 @@
    				};
 
    				let aboutNztMenu = document.getElementById("about-nzt-menu");
-   				let arrowNzt = document.getElementById("arrow-nzt"); 
-
    				if (aboutNztMenu.classList.contains('about-nzt-menu'))
    				{
    					aboutNztMenu.classList.remove('about-nzt-menu');
@@ -438,9 +435,9 @@
    				const forPatientMenu = document.getElementById("for-patient-menu");
    				forPatientMenu.classList.toggle("for-patient-menu");
 
-   				//плавность разворачивания меню/menu opening smoothness
+   				/*//плавность разворачивания меню/menu opening smoothness
    				let panel = forPatientMenu.firstElementChild;
-   				smoothness(forPatientMenu.firstElementChild);
+   				smoothness(forPatientMenu.firstElementChild);*/
 
     			//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowPatient();
@@ -467,9 +464,9 @@
    				const aboutNztMenu = document.getElementById("about-nzt-menu");
    				aboutNztMenu.classList.toggle("about-nzt-menu");
 
-   				//плавность разворачивания меню/menu opening smoothness
+   				/*//плавность разворачивания меню/menu opening smoothness
    				let panel = aboutNztMenu.firstElementChild;
-   				smoothness(aboutNztMenu.firstElementChild);
+   				smoothness(aboutNztMenu.firstElementChild);*/
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
    				arrowNzt();
