@@ -295,6 +295,98 @@
 		<!--открытие выпадающего меню и замена типа стрелки/ opening drop-down menu and replace type of arrow-->
 		<script type="text/javascript">
 
+			//соответствующее поведение стрелок/corresponding arrow behavior
+			function arrowDoctor()
+			{
+				let arrowDoctor = document.getElementById("arrow-doctor"); 
+   				
+   				if (arrowDoctor.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowDoctor.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowDoctor.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowDoctor.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowDoctor.classList.contains('arrow_down')==true)
+   						{
+   							arrowDoctor.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowDoctor.classList.contains('arrow_up')==true)
+   							{
+   								arrowDoctor.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}
+			};
+			function arrowPatient()
+			{
+				let arrowPatient = document.getElementById("arrow-patient"); 
+   				
+   				if (arrowPatient.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowPatient.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowPatient.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowPatient.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowPatient.classList.contains('arrow_down')==true)
+   						{
+   							arrowPatient.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowPatient.classList.contains('arrow_up')==true)
+   							{
+   								arrowPatient.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}
+			};
+			function arrowNzt
+			{
+				let arrowNzt = document.getElementById("arrow-nzt"); 
+
+				if (arrowNzt.classList.contains('arrow_down_fixed')==true)
+   				{
+   					arrowNzt.classList.replace('arrow_down_fixed','arrow_up_fixed');
+   				}
+   				else
+   				{
+   					if (arrowNzt.classList.contains('arrow_up_fixed')==true)
+   					{
+   						arrowNzt.classList.replace('arrow_up_fixed','arrow_down_fixed');
+   					}
+   					else
+   					{
+   						if (arrowNzt.classList.contains('arrow_down')==true)
+   						{
+   							arrowNzt.classList.replace('arrow_down','arrow_up');
+   						}
+   						else
+   						{
+   							if (arrowNzt.classList.contains('arrow_up')==true)
+   							{
+   								arrowNzt.classList.replace('arrow_up','arrow_down');
+   							}
+   						}
+   					}
+   				}
+			};
+
    			function ddmenu1()
    			{
    				//открытие/закрытие блока "врачу"/ open/close block "for Doctor"
@@ -379,33 +471,7 @@
    				};
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
-   				const arrowDoctor = document.getElementById("arrow-doctor"); 
-   				
-   				if (arrowDoctor.classList.contains('arrow_down_fixed')==true)
-   				{
-   					arrowDoctor.classList.replace('arrow_down_fixed','arrow_up_fixed');
-   				}
-   				else
-   				{
-   					if (arrowDoctor.classList.contains('arrow_up_fixed')==true)
-   					{
-   						arrowDoctor.classList.replace('arrow_up_fixed','arrow_down_fixed');
-   					}
-   					else
-   					{
-   						if (arrowDoctor.classList.contains('arrow_down')==true)
-   						{
-   							arrowDoctor.classList.replace('arrow_down','arrow_up');
-   						}
-   						else
-   						{
-   							if (arrowDoctor.classList.contains('arrow_up')==true)
-   							{
-   								arrowDoctor.classList.replace('arrow_up','arrow_down');
-   							}
-   						}
-   					}
-   				}
+   				function arrowDoctor();
    			};	
 
 
@@ -492,33 +558,7 @@
    				};
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
-   				const arrowPatient = document.getElementById("arrow-patient"); 
-   				
-   				if (arrowPatient.classList.contains('arrow_down_fixed')==true)
-   				{
-   					arrowPatient.classList.replace('arrow_down_fixed','arrow_up_fixed');
-   				}
-   				else
-   				{
-   					if (arrowPatient.classList.contains('arrow_up_fixed')==true)
-   					{
-   						arrowPatient.classList.replace('arrow_up_fixed','arrow_down_fixed');
-   					}
-   					else
-   					{
-   						if (arrowPatient.classList.contains('arrow_down')==true)
-   						{
-   							arrowPatient.classList.replace('arrow_down','arrow_up');
-   						}
-   						else
-   						{
-   							if (arrowPatient.classList.contains('arrow_up')==true)
-   							{
-   								arrowPatient.classList.replace('arrow_up','arrow_down');
-   							}
-   						}
-   					}
-   				}	
+   				function arrowPatient();
 
    			};
 
@@ -605,33 +645,7 @@
    				};
 
    				//соответствующее поведение стрелки/corresponding arrow behavior
-   				const arrowNzt = document.getElementById("arrow-nzt"); 
-
-				if (arrowNzt.classList.contains('arrow_down_fixed')==true)
-   				{
-   					arrowNzt.classList.replace('arrow_down_fixed','arrow_up_fixed');
-   				}
-   				else
-   				{
-   					if (arrowNzt.classList.contains('arrow_up_fixed')==true)
-   					{
-   						arrowNzt.classList.replace('arrow_up_fixed','arrow_down_fixed');
-   					}
-   					else
-   					{
-   						if (arrowNzt.classList.contains('arrow_down')==true)
-   						{
-   							arrowNzt.classList.replace('arrow_down','arrow_up');
-   						}
-   						else
-   						{
-   							if (arrowNzt.classList.contains('arrow_up')==true)
-   							{
-   								arrowNzt.classList.replace('arrow_up','arrow_down');
-   							}
-   						}
-   					}
-   				}
+   				function arrowNzt();
 
    			};
 
