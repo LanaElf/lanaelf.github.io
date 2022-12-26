@@ -1,14 +1,14 @@
   @font-face {
     font-family: Micra;
-    src: url(/fonts/micra.ttf);
+    src: url(fonts/micra.ttf);
    } 
   @font-face {
     font-family: Micra Bold;
-    src: url(/fonts/micra-bold.ttf);
+    src: url(fonts/micra-bold.ttf);
    } 
   @font-face {
     font-family: Sailec;
-    src: url(/fonts/Sailec Medium.ttf);
+    src: url(fonts/Sailec Medium.ttf);
    } 
 
 body{
