@@ -1,9 +1,7 @@
 # lanaelf.github.io
-
-# https://lanaelf.github.io/NovikovGallery/ 
-
 Адаптивный одностраничный сайт - персональная фотогалерея. Vanilla JS
+https://lanaelf.github.io/NovikovGallery/ 
 
-# https://lanaelf.github.io/SnowpityTime/
-
-Сайт-библиотека для чтения. Сделана на Vue.js 
+# SnowpityTime
+Сайт-библиотека для чтения темматической литературы. Сделана на Vue.js без SSR, посмотреть можно тут 
+http://snowpitytime.cw53615.tw1.ru/
