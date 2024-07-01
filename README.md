@@ -1,4 +1,4 @@
-# lanaelf.github.io
+# NovikovGallery
 Адаптивный одностраничный сайт - <a href="https://lanaelf.github.io/NovikovGallery/ ">персональная фотогалерея</a>. Vanilla JS
 
 # SnowpityTime
