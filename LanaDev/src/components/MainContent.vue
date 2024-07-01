@@ -213,12 +213,10 @@ function drawPazzle(difficultyOptions: {
                 rightRotations.add(detail.dataset.number);
 
                 if (rightRotations.size === difficultyOptions.detailsCount) {
-                    console.log(rightRotations.size);
-
                     rightRotations.clear();
-                    conrgats.style.display = 'flex';
                     puzzleContainer.style.overflow = 'hidden';
-                    puzzleContainer.style.boxShadow = '(0 0 20px #fff)';
+                    puzzleContainer.style.boxShadow = '0 0 20px #fff';
+                    setTimeout(() => {conrgats.style.display = 'flex'}, 1500);
                 }
             } else {
                 conrgats.style.display = 'none';
@@ -257,7 +255,7 @@ function drawPazzle(difficultyOptions: {
             <div>Самодисциплина</div>
         </div>
 
-        <div id="expirience" class="main-block text-indents pt-28">
+        <div id="experience" class="main-block text-indents pt-28">
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5">Опыт</div>
                 <div class="font-semibold text-m">~ 1 год коммерческого опыта</div>
                 <p>Участвовала в разработке маркетплейса и других проектов в команде, верстала, писала различный функцонал на JS, в том числе библиотеки и модули, составляла запросы к базе данных.</p>
@@ -394,26 +392,26 @@ function drawPazzle(difficultyOptions: {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: 0.5s ease-in 0s infinite alternate congrats;
+    animation: .5s ease-in 0s infinite alternate congrats;
     filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 5px rgb(251 113 133));
 
 }
 
 @keyframes congrats{
     from {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     to {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
     }
 }
 </style>
