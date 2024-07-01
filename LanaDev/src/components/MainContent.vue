@@ -1,13 +1,20 @@
-<script setup>
+<script setup lang="ts">
+//@ts-expect-error
 import { usePuzzleStore } from '/src/stores/puzzle'
 
 const puzzleStore = usePuzzleStore();
 
-const puzzlePicturePaths = [];
+const puzzlePicturePaths: Array<string> = [];
 
-const difficulties = [ 'Easy', 'Normal', 'Hard' ];
+const difficulties: Array<string> = [ 'Easy', 'Normal', 'Hard' ];
 
-const puzzle = {
+const puzzle: {
+    choosenPicturePath: string,
+    choosenDifficulty: string,
+    containerWidth: number,
+    containerHeight: number,
+    rotationAngles: Array<number>,
+} = {
     choosenPicturePath: '',
     choosenDifficulty: 'Easy',
     containerWidth: 0,
@@ -15,13 +22,13 @@ const puzzle = {
     rotationAngles: [0, 45, 90, 135, 180, 225, 270],
 };
 
-puzzleStore.puzzle.pictures.forEach( (picture) => {
+puzzleStore.puzzle.pictures.forEach( (picture: string) => {
     puzzlePicturePaths.push(puzzleStore.puzzle.picDir+picture);
 });
 
-function choosePicture(picturePath) {
+function choosePicture(picturePath: string) {
     puzzle.choosenPicturePath = picturePath;
-    const choosenPicture = document.getElementById('choosenPicture');
+    const choosenPicture = document.getElementById('choosenPicture') as HTMLElement;
 
     choosenPicture.innerHTML = `
         <img class="puzzle-container" src=${picturePath}>
@@ -29,29 +36,37 @@ function choosePicture(picturePath) {
 
     choosenPicture.style.display = "block";
 
-    puzzle.containerWidth = document.querySelector('.puzzle-container').offsetWidth;
-    puzzle.containerHeight = document.querySelector('.puzzle-container').offsetHeight;
+    const puzzleContainer = choosenPicture.querySelector('.puzzle-container') as HTMLElement;
+
+    puzzle.containerWidth = puzzleContainer.offsetWidth;
+    puzzle.containerHeight = puzzleContainer.offsetHeight;
 
     chooseDifficulty(puzzle.choosenDifficulty);
 };
 
-function chooseDifficulty(difficulty) {
+function chooseDifficulty(difficulty: string) {
     puzzle.choosenDifficulty = difficulty;
 
-    document.querySelectorAll('.difficulty').forEach((button) => {
-            button.style.background = 'rgb(251 113 133)';
-        })
+    const difficultyButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.difficulty');
+    difficultyButtons.forEach((button: HTMLElement) => {
+        button.style.background = 'rgb(251 113 133)';
+    })
 
-    document.getElementById(puzzle.choosenDifficulty).style.background = 'rgb(244 63 94)';
+    const choosenDifficultyEl = document.getElementById(puzzle.choosenDifficulty) as HTMLElement;
+    choosenDifficultyEl.style.background = 'rgb(244 63 94)';
 
     if ( puzzle.choosenDifficulty && puzzle.choosenPicturePath ) {
-        const difficultyOptions = {
+        const difficultyOptions: {
+            detailsCount: number,
+            detailsInRow: number,
+            detailsPosition: Array<string>,
+        } = {
             detailsCount: 0,
             detailsInRow: 0,
             detailsPosition: [],
         };
 
-        function setOptions(detailsCount, detailsInRow, detailsPosition) {
+        function setOptions(detailsCount: number, detailsInRow: number, detailsPosition: Array<string>) {
             difficultyOptions.detailsCount = detailsCount;
             difficultyOptions.detailsInRow = detailsInRow;
             difficultyOptions.detailsPosition = detailsPosition;
@@ -128,7 +143,11 @@ function chooseDifficulty(difficulty) {
 
 };
 
-function drawPazzle(difficultyOptions) {
+function drawPazzle(difficultyOptions: {
+        detailsCount: number,
+        detailsInRow: number,
+        detailsPosition: Array<string>,
+    }) {
     const container = document.createElement('div');
     container.style.width = puzzle.containerWidth+'px';
     container.style.height = puzzle.containerHeight+'px';
@@ -137,7 +156,7 @@ function drawPazzle(difficultyOptions) {
     container.classList.add('puzzle-container');
 
     for (let i = 0; i < difficultyOptions.detailsPosition.length; i++) {
-        const detail = document.createElement('div');
+        const detail = document.createElement('div') as HTMLElement;
         detail.style.width = puzzle.containerWidth/difficultyOptions.detailsInRow+'px';
         detail.style.height = puzzle.containerHeight/difficultyOptions.detailsInRow+'px';
         detail.style.backgroundImage = 'url('+puzzle.choosenPicturePath+')';
@@ -147,7 +166,7 @@ function drawPazzle(difficultyOptions) {
 
         const rotationAngle = puzzle.rotationAngles[Math.floor(Math.random() * puzzle.rotationAngles.length)];
         detail.style.transform = 'rotate(' + rotationAngle + 'deg)';
-        detail.dataset.number = [i];
+        detail.dataset.number = i.toString();
 
         const rotationButton = document.createElement('img');
         rotationButton.src = '/src/assets/images/rotation.png';
@@ -157,22 +176,25 @@ function drawPazzle(difficultyOptions) {
         container.appendChild(detail);
     }
 
-    const choosenPictureEl = document.getElementById('choosenPicture');
-    choosenPictureEl.querySelector('.puzzle-container').replaceWith(container);
+    const choosenPictureEl = document.getElementById('choosenPicture') as HTMLElement;
+    const puzzleContainer = choosenPictureEl.querySelector('.puzzle-container') as HTMLElement;
+    puzzleContainer.replaceWith(container);
 
-    const puzzleDetails = choosenPictureEl.querySelectorAll('.puzzle-detail');
+    const puzzleDetails: NodeListOf<HTMLElement> = choosenPictureEl.querySelectorAll('.puzzle-detail');
     const rightRotations = new Set();
-    const conrgats = choosenPictureEl.querySelector('.congrats')
+    const conrgats = choosenPictureEl.querySelector('.congrats') as HTMLElement;
     conrgats.addEventListener('click', () => {
         choosenPictureEl.style.display = 'none';
     })
 
     checkDetailsRotation();
 
-    puzzleDetails.forEach((detail) => {
-        detail.addEventListener('click', (evt) => {
-            let newAngle = parseInt(detail.style.transform.match(/\d+/))
-            newAngle += 45
+    puzzleDetails.forEach((detail: HTMLElement) => {
+        detail.addEventListener('click', () => {
+            const newAngleArray: Array<string> = detail.style.transform.match(/\d+/) as RegExpMatchArray;
+            const newAngleString: string = newAngleArray.toString();
+            let newAngle: number = parseInt(newAngleString);
+            newAngle += 45;
             detail.style.transform = 'rotate(' + newAngle + 'deg)';
             checkDetailsRotation();
         })
@@ -180,9 +202,11 @@ function drawPazzle(difficultyOptions) {
 
 
     function checkDetailsRotation() {
-        puzzleDetails.forEach((detail) => {
-            const angle = parseInt(detail.style.transform.match(/\d+/));
-            const puzzleContainer = choosenPictureEl.querySelector('.puzzle-container');
+        puzzleDetails.forEach((detail: HTMLElement) => {
+            const angleArray: Array<string> = detail.style.transform.match(/\d+/) as RegExpMatchArray;
+            const angleString: string = angleArray.toString();
+            const angle: number = parseInt(angleString);
+            const puzzleContainer = choosenPictureEl.querySelector('.puzzle-container') as HTMLElement;
             puzzleContainer.style.borderRadius = '20px';
 
             if (angle === 0 || angle % 360 === 0) {
@@ -237,20 +261,22 @@ function drawPazzle(difficultyOptions) {
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5">Опыт</div>
                 <div class="font-semibold text-m">~ 1 год коммерческого опыта</div>
                 <p>Участвовала в разработке маркетплейса и других проектов в команде, верстала, писала различный функцонал на JS, в том числе библиотеки и модули, составляла запросы к базе данных.</p>
-                <p>Написала небольшой <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/">пет-проект</a> на Vue. А этот сайт написан на Vue + TS + Pinia + Taliwind за выходные, собран на Vite (в том числе - ради опыта работы с этими инструментами, ну и разрабатывать на Vue c HMR просто приятно).
+                <p>Написала небольшой <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">пет-проект</a> на Vue. А этот сайт написан на Vue + TS + Pinia + Taliwind за выходные, собран на Vite (в том числе - ради опыта работы с этими инструментами, ну и разрабатывать на Vue c HMR просто приятно).
             </p>
         </div>
 
         <div id="code-example" class="main-block text-indents pt-28">
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5 ">Пример кода</div>
-
             <p>
-                В качестве демонстрации некоторых моих навыков я решила написать мини-игру. Выбранная картинка "делится" на количество частей, зависимое от выбранной сложности. Детали представляют собой блоки с бэкграундом-выбранной картинкой, спозиционированным в зависимости от расположения детали, повернутые на рандомный угол (с шагом в 45 градусов). Нужно вращать детали, пока картинка не соберется.
+                В качестве демонстрации некоторых моих навыков я решила написать мини-игру.
+            </p>
+            <p>
+                Выбранная картинка "делится" на количество частей, зависимое от выбранной сложности. Детали представляют собой блоки с бэкграундом-выбранной картинкой, спозиционированным в зависимости от расположения детали, повернутые на рандомный угол (с шагом в 45 градусов). Нужно вращать детали, пока картинка не соберется.
             </p>
 
             <p class="text-center">
-                А чтобы получить ссылку на код этого сайта на GitHub - нужно выиграть
-                <br>(шутка, вот <a href="" class="text-violet-600 font-semibold">ссылка</a>)
+                А чтобы получить ссылку на код этого сайта на GitHub - нужно выиграть.
+                <br>Шутка. Вот <a href="https://github.com/LanaElf/lanaelf.github.io/tree/main/LanaDev" target="_blank" class="text-violet-600 font-semibold">ссылка</a>.
             </p>
 
             <div class="bg-rose-100 p-10 max-md:p-5 max-sm:p-3 my-10 rounded-2xl w-full flex flex-col items-center relative">
@@ -295,7 +321,7 @@ function drawPazzle(difficultyOptions) {
                 Последние 9 месяцев работаю в веб-студии. Участвую в разработке маркетплейса для туристического бизнеса и других проектов.
             </p>
             <p>
-                В свое удовольствие написала пару вещей на Vue (этот сайт и <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/">еще один</a>). Очень люблю писать код, изучаю новые технологии во фронтенде и стремлюсь добиться высокого уровня профессионализма, включая и хард-, и софт-скиллы.
+                В свое удовольствие написала пару вещей на Vue (этот сайт и <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">еще один</a>). Очень люблю писать код, изучаю новые технологии во фронтенде и стремлюсь добиться высокого уровня профессионализма, включая и хард-, и софт-скиллы.
             </p>
         </div>
     </div>

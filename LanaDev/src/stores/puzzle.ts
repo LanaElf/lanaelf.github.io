@@ -1,8 +1,10 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const usePuzzleStore = defineStore('puzzle', () => {
-    const puzzle = ref({
+
+export const usePuzzleStore: any = defineStore('puzzle', () => {
+    const puzzle: Ref<{picDir: string, pictures: Array<string>}> = ref({
         picDir: '/src/assets/images/puzzlePictures/',
         pictures: [
             'angel.jpg',
@@ -29,27 +31,7 @@ export const usePuzzleStore = defineStore('puzzle', () => {
         ]
     });
 
-    const getRandomPicture = () => {
-        return puzzle.pictures[Math.floor(Math.random() * puzzle.pictures.length)];
-    };
-
     return {
-        puzzle,
-        getRandomPicture
+        puzzle
     };
 });
-//{
-//    state: () => {
-//        return {
-//            pictures: [
-//                {path: '@/assets/images/angel.png'}
-//            ]
-//        }
-//    },
-//    actions: {
-//        getRandomPicture() {
-//            const randomIndex = Math.floor(Math.random() * array.length);
-//            return this.state.pictures[randomIndex];
-//        }
-//    }
-//}

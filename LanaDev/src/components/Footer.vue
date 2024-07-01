@@ -1,9 +1,7 @@
-<script setup>
-function copy(text) {
+<script setup lang="ts">
+function copy(text: string) {
     navigator.clipboard.writeText(text).then(function() {
         alert('Текст успешно скопирован в буфер обмена');
-    }, function(err) {
-        alert('Произошла ошибка при копировании текста: ', err);
     });
 }
 </script>
@@ -34,7 +32,7 @@ function copy(text) {
                     flex-col
                     p-10">
             <div>Телеграм: <a href="https://t.me/elf_lana">@elf_lana</a></div>
-            <div>Почта: <a href="javascript@void" @click="copy('elf_lana@vk.com')">elf_lana@vk.com</a></div>
+            <div>Почта: <a @click="copy('elf_lana@vk.com')" class="cursor-copy">elf_lana@vk.com</a></div>
     </div>
     </div>
 </template>
