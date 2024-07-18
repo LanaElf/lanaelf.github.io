@@ -8,7 +8,7 @@
                     p-16
                     rounded-br-50">
             <div class="flex justify-center">
-                <img class="w-72" src="/src/assets/images/angel2.png">
+                <img class="w-72" src="/src/assets/images/angel.png">
             </div>
             <div class="flex
                         justify-center
