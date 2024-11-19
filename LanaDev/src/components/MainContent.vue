@@ -28,6 +28,7 @@ puzzleStore.puzzle.pictures.forEach( (picture: string) => {
 
 function choosePicture(picturePath: string) {
     puzzle.choosenPicturePath = picturePath;
+
     const choosenPicture = document.getElementById('choosenPicture') as HTMLElement;
 
     choosenPicture.innerHTML = `
@@ -48,11 +49,13 @@ function chooseDifficulty(difficulty: string) {
     puzzle.choosenDifficulty = difficulty;
 
     const difficultyButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.difficulty');
+
     difficultyButtons.forEach((button: HTMLElement) => {
         button.style.background = 'rgb(251 113 133)';
     })
 
     const choosenDifficultyEl = document.getElementById(puzzle.choosenDifficulty) as HTMLElement;
+
     choosenDifficultyEl.style.background = 'rgb(244 63 94)';
 
     if ( puzzle.choosenDifficulty && puzzle.choosenPicturePath ) {
@@ -84,6 +87,7 @@ function chooseDifficulty(difficulty: string) {
                    '50% 100%',
                    '100% 100%'
                 ]);
+
                 break;
 
             case 'Normal':
@@ -105,6 +109,7 @@ function chooseDifficulty(difficulty: string) {
                     'calc(100% / 3 *2) 100%',
                     '100% 100%',
                 ]);
+
                 break;
 
             case 'Hard':
@@ -135,6 +140,7 @@ function chooseDifficulty(difficulty: string) {
                     'calc(100% / 4 *3) 100%',
                     '100% 100%'
                 ]);
+
                 break;
         };
 
@@ -149,6 +155,7 @@ function drawPazzle(difficultyOptions: {
         detailsPosition: Array<string>,
     }) {
     const container = document.createElement('div');
+
     container.style.width = puzzle.containerWidth+'px';
     container.style.height = puzzle.containerHeight+'px';
     container.style.marginTop = '45px';
@@ -157,6 +164,7 @@ function drawPazzle(difficultyOptions: {
 
     for (let i = 0; i < difficultyOptions.detailsPosition.length; i++) {
         const detail = document.createElement('div') as HTMLElement;
+
         detail.style.width = puzzle.containerWidth/difficultyOptions.detailsInRow+'px';
         detail.style.height = puzzle.containerHeight/difficultyOptions.detailsInRow+'px';
         detail.style.backgroundImage = 'url('+puzzle.choosenPicturePath+')';
@@ -165,10 +173,12 @@ function drawPazzle(difficultyOptions: {
         detail.classList.add('puzzle-detail');
 
         const rotationAngle = puzzle.rotationAngles[Math.floor(Math.random() * puzzle.rotationAngles.length)];
+
         detail.style.transform = 'rotate(' + rotationAngle + 'deg)';
         detail.dataset.number = i.toString();
 
         const rotationButton = document.createElement('img');
+
         rotationButton.src = '/src/assets/images/rotation.png';
         rotationButton.classList.add('detail-rotation-button');
         detail.appendChild(rotationButton);
@@ -178,11 +188,13 @@ function drawPazzle(difficultyOptions: {
 
     const choosenPictureEl = document.getElementById('choosenPicture') as HTMLElement;
     const puzzleContainer = choosenPictureEl.querySelector('.puzzle-container') as HTMLElement;
+
     puzzleContainer.replaceWith(container);
 
     const puzzleDetails: NodeListOf<HTMLElement> = choosenPictureEl.querySelectorAll('.puzzle-detail');
     const rightRotations = new Set();
     const conrgats = choosenPictureEl.querySelector('.congrats') as HTMLElement;
+
     conrgats.addEventListener('click', () => {
         choosenPictureEl.style.display = 'none';
     })
@@ -245,7 +257,7 @@ function drawPazzle(difficultyOptions: {
             <div>Pinia</div>
             <div>Vite</div>
             <div>Git</div>
-            <div>Английский язык (B2, письменный)</div>
+            <div>Английский язык (B1, письменный)</div>
 
             <div class="font-semibold text-lg mt-5">Мягкие:</div>
             <div>Работа в команде</div>
@@ -257,16 +269,21 @@ function drawPazzle(difficultyOptions: {
 
         <div id="experience" class="main-block text-indents pt-28">
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5">Опыт</div>
-                <div class="font-semibold text-m">~ 1 год коммерческого опыта</div>
-                <p>Участвовала в разработке маркетплейса и других проектов в команде, верстала, писала различный функцонал на JS, в том числе библиотеки и модули, составляла запросы к базе данных.</p>
-                <p>Написала небольшой <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">пет-проект</a> на Vue. А этот сайт написан на Vue + TS + Pinia + Taliwind за выходные, собран на Vite (в том числе - ради опыта работы с этими инструментами, ну и разрабатывать на Vue c HMR просто приятно).
+
+            <div class="font-semibold text-m">Чуть больше 1 года коммерческого опыта</div>
+
+            <p>
+                Участвовала в разработке маркетплейса и других проектов в команде, верстала, писала различный функцонал на JS, в том числе библиотеки и модули, составлялазапросы к базе данных.
+            </p>
+            <p>
+                Написала <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">пет-проект</a> на Vue - небольшая библиотека тематической литературы с сортировкой по жанрам, персонажам, с несколькими темами. А этот сайт написан на Vue + TypeScript + Pinia + Taliwind за выходные, собран на Vite (вообще, я думаю, что Vue и TypeScript избыточны для малюсенького сайта, весь контент которого помещается на одну страничку, но я все же использовала их здесь для того, чтобы немного попрактиковаться с этими инструментами, ну и разрабатывать на Vue c HMR просто приятно).
             </p>
         </div>
 
         <div id="code-example" class="main-block text-indents pt-28">
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5 ">Пример кода</div>
             <p>
-                В качестве демонстрации некоторых моих навыков я решила написать мини-игру.
+                Для демонстрации некоторых моих навыков я написала мини-игру.
             </p>
             <p>
                 Выбранная картинка "делится" на количество частей, зависимое от выбранной сложности. Детали представляют собой блоки с бэкграундом-выбранной картинкой, спозиционированным в зависимости от расположения детали, повернутые на рандомный угол (с шагом в 45 градусов). Нужно вращать детали, пока картинка не соберется.
@@ -304,8 +321,8 @@ function drawPazzle(difficultyOptions: {
             <p>
                 Я получила высшее образование в Финансовом Универститете при Правительстве РФ по направлению "менеджмент и маркетинг".
                 Это было интересно, я узнала как работает бизнес и рынок.
-                Но это не было той сферой, в которую мне бы хотелось грубоко погрузиться.
-                Увлечение программированием пришло позже.
+                Но я не чувствовала к этой сфере того, что называется "душа лежит".
+                Позже ко мне пришло увлечение программированием.
             </p>
 
             <p>
@@ -316,10 +333,10 @@ function drawPazzle(difficultyOptions: {
                 Я начала изучать фронтенд, сделала несколько заказов на фрилансе, около 4х месяцев поработала в штате интернет-магазина. Затем стала мамой и в развитии профессиональных навыков пришлось сделать перерыв. Когда дочь подросла - я снова погрузилась во фронтенд.
             </p>
             <p>
-                Последние 9 месяцев работаю в веб-студии. Участвую в разработке маркетплейса для туристического бизнеса и других проектов.
+                Последний год работаю в веб-студии. Активно участвую в разработке маркетплейса для туристического бизнеса и других проектов.
             </p>
             <p>
-                В свое удовольствие написала пару вещей на Vue (этот сайт и <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">еще один</a>). Очень люблю писать код, изучаю новые технологии во фронтенде и стремлюсь добиться высокого уровня профессионализма, включая и хард-, и софт-скиллы.
+                Написала пару вещей на Vue (этот сайт и <a class="text-violet-500 font-semibold" href="http://snowpitytime.cw53615.tw1.ru/" target="_blank">еще один</a>). Очень люблю писать код, изучаю новые технологии во фронтенде и стремлюсь добиться высокого уровня профессионализма, включая и хард-, и софт-скиллы.
             </p>
         </div>
     </div>
