@@ -38,11 +38,11 @@
 
       opts = 
       {
-        minRadius: 0.5,
+        minRadius: 0.2,
         maxRadius: 1.4,
         colors: ["rgba(255, 255, 255, 0.7)", "rgba(252, 244, 201, 0.7)", "rgba(201, 252, 201, 0.7)", "rgba(201, 236, 252, 0.7)", "rgba(229, 201, 252, 0.7)", "rgba(252, 201, 201, 0.7)", "rgba(252, 201, 241, 0.7)", "rgba(252, 201, 201, 0.7)"],
-        delay: 90,
-        step: 0.1
+        delay: 100,
+        step: 0.2
       }
 
       Stars = function (w, h) 
@@ -80,7 +80,7 @@
       {
         arrStars = [];
 
-        for (let i = 0; i < (w / 40) * (h / 40); i++) 
+        for (let i = 0; i < (w / 60) * (h / 60); i++) 
         {
           arrStars.push(new Stars(w, h));
           arrStars[i].draw();

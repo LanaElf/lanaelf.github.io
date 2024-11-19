@@ -15,48 +15,97 @@
 
 </head>
 <body>
-  <!--<canvas class="stars"></canvas>-->
-  <canvas class="bdCanvas" id="bdCanvas" width="660" height="975"></canvas>
+  <!--звездный фон-->
+  <canvas class="bdCanvas" id="bdCanvas" width="660" height="975"></canvas> 
+
 	<header>
 		
-			<div class="text-left">you can see something special in the ordinary</div>
+			<div class="line-left"></div>
 			<h1>Novikov Gallery</h1>
-			<div class="text-right">beauty comes from the mind of a contemplator</div>
+			<div class="line-right"></div>
 	</header>
+
 	<main>
-    <h2>My name is Nikita.<br>Welcome to my personal photo gallery</h2>
+    <h2>My name is Nikita.
+      <br>I am an amateur photographer.
+      <br> I like to notice something special in the ordinary and capture it focusing on the most interesting details.
+      <div class="welcome">Welcome to my personal photo gallery</div></h2>
     <div class="mainContainer">
-      <ul id="photoContainer">
-      
+      <div class="view-change-btns">
+        <button id="svButton" onclick="scrollView()"><img src="images/scroll-btn.png"></button>
+        <button id="gvButton" onclick="gridView()"><img src="images/grid-btn.png"></button>
+      </div>
+      <ul id="photoContainer" class="scrollView">
+        <!-- сюда вставляются фотографии -->
+      </ul>
+
+      <ul id="photoContainerGrid" class="gridlView">
+        <!-- сюда вставляются фотографии -->
       </ul>
     </div>
 	</main>
+
 	<footer>
       <div class="contacts">
         My pictures on <a href="https://www.eyeem.com/u/niknew" target="_blank">EyeEm</a>
         <!--<a href=""><img src="images/inst.png"></a>-->
       </div>
-      <div class="sign">© Novikov Gallery, 2022</div>
-	</footer>  
-	<script type="text/javascript">
+      <div class="sign">© Novikov Gallery, 2023</div>
+	</footer> 
 
-    //выкладываем фотографии из массива arrPhotos.js
-    for (let i = 0; i < arrPhotos.length; i++)
-      { 
-        let photoBlock = `<li><div class="gallery-item"><a href="#photo`+arrPhotos[i].id+`" class="photo-box" id="photo`+arrPhotos[i].id+`small"><img src="photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg"></a><a href="https://www.eyeem.com/p/`+arrPhotos[i].eyeemId+`" target="_blank" class="purchase-link">Buy at eyeem.com</a></div><!--hidden lightbox--><a href="#photo`+arrPhotos[i].id+`small" id="photo`+arrPhotos[i].id+`" class="lightbox"><div class="item-header">`+arrPhotos[i].name+`</div><span class="lightbox-span" style="background-image: url('photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg')"></span></a></li>`
-        document.getElementById('photoContainer').insertAdjacentHTML("beforeend", photoBlock);
+	<script>
+
+      //выкладываем фотографии из массива arrPhotos.js
+      for (let i = 0; i < arrPhotos.length; i++)
+       { 
+          let photoBlock = `<li><div class="gallery-item"><a href="#photo`+arrPhotos[i].id+`" class="photo-box" id="photo`+arrPhotos[i].id+`small"><img src="photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg"></a><a href="https://www.eyeem.com/p/`+arrPhotos[i].eyeemId+`" target="_blank" class="purchase-link">Buy at eyeem.com</a></div><!--hidden lightbox--><a href="#photo`+arrPhotos[i].id+`small" id="photo`+arrPhotos[i].id+`" class="lightbox"><div class="item-header">`+arrPhotos[i].name+`</div><span class="lightbox-span" style="background-image: url('photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg')"></span></a></li>`
+          document.getElementById('photoContainer').insertAdjacentHTML("beforeend", photoBlock);
+
+          let photoBlockGrid = `<li><div class="gallery-item"><a href="#photoGrid`+arrPhotos[i].id+`" class="photo-box" id="photoGrid`+arrPhotos[i].id+`small"><img src="photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg"></a><a href="https://www.eyeem.com/p/`+arrPhotos[i].eyeemId+`" target="_blank" class="purchase-link">Buy at eyeem.com</a></div><!--hidden lightbox--><a href="#photoGrid`+arrPhotos[i].id+`small" id="photoGrid`+arrPhotos[i].id+`" class="lightbox"><div class="item-header">`+arrPhotos[i].name+`</div><span class="lightbox-span" style="background-image: url('photos/eyeem-`+arrPhotos[i].eyeemId+`.jpg')"></span></a></li>`
+          document.getElementById('photoContainerGrid').insertAdjacentHTML("beforeend", photoBlockGrid);
+        };
+      
+      //выбор режима просмотра
+      const photoContainer = document.getElementById("photoContainer");
+      const photoContainerGrid = document.getElementById("photoContainerGrid");
+
+      function scrollView()
+      {
+        photoContainerGrid.setAttribute("style", "display: none");
+        photoContainer.setAttribute("style", "display: flex");
+         
       };
 
-  </script>
-  <script type="text/javascript">
+      function gridView()
+      {
+        photoContainer.setAttribute("style", "display: none");
+        photoContainerGrid.setAttribute("style", "display: flex");
+      }
 
-  //горизонтальная прокрутка фотографий
-  jQuery(function(e){e.fn.hScroll=function(l){l=l||120,e(this).bind("DOMMouseScroll mousewheel",function(t){var i=t.originalEvent,n=i.detail?i.detail*-l:i.wheelDelta,o=e(this).scrollLeft();o+=n>0?-l:l,e(this).scrollLeft(o),t.preventDefault()})}});
+      //горизонтальная прокрутка фотографий
+      /*if($("#photoContainer").hasClass("scrollView"))*/
+      
+      jQuery(
+        function(e){
+          e.fn.hScroll=function(l){
+                          l=l||120,
+                          e(this).bind("DOMMouseScroll mousewheel",
+                       function(t){
+                          var i=t.originalEvent,
+                              n=i.detail?i.detail*-l:i.wheelDelta,
+                              o=e(this).scrollLeft();
+                              o+=n>0?-l:l,
+                              e(this).scrollLeft(o),
+                              t.preventDefault()
+                            })}});
 
-  $(document).ready(function()
-  {
-    $('#photoContainer').hScroll(); 
-  });
+      $(document).ready(function()
+        {
+          $('.scrollView').hScroll();
+        }
+      );
+      
+      
 
   </script>
 </body>

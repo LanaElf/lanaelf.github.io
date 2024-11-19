@@ -19,7 +19,7 @@ body{
 }
 header{
 	background: linear-gradient(180deg, rgba(0,0,0,0.9794117476091999) 45%, rgba(0,0,4,0.7917366775811887) 71%, rgba(0,212,255,0) 97%);
-	height: 7em;
+	height: 10em;
 	overflow: hidden;
 	color: #aaf;
 	display: inline-grid;
@@ -38,30 +38,40 @@ header{
 }
 h1{
 	font-size: 2em;
+	line-height: 3.5em;
 	text-align: center;
 	color: white;
 	font-family: 'Micra Bold', arial;
 	
 	text-shadow: 0px 0px 10px black;
 }
-.text-left, .text-right {
+.line-left, .line-right {
 	font-family: 'Micra', arial;
-	font-size: 10px;
-	padding: 3.5em 1em;
+	height: 0px;
+	border: 2px solid #aaf;
 }
-.text-right{
+.line-left{
+	margin: 4.5em 6em 4.5em 0;
+}
+.line-right{
 	text-align: right;
+	margin: 4.5em 0 4.5em 6em;
 }
 
 h2{
 	text-align: center;
 	color: #aaf;
 	font-family: 'Micra', arial;
-	font-size: 1em;
+	font-size: 0.9em;
 	line-height: 1.7em;
 	text-shadow: 0px 0px 10px black;
 	margin: 0;
 	position: static;
+}
+.welcome{
+	color: white;
+	font-size: 1.1em;
+	padding-top: 1em;
 }
 .bdCanvas {
   position: fixed;
@@ -71,37 +81,76 @@ h2{
   height: 100%;
   z-index: -1;
   background-color: #050818;
-  background-image: -o-radial-gradient(at bottom, #090a2f, #000);
-  background-image: radial-gradient(at bottom, #090a2f, #000)
+  background-image: -o-radial-gradient(at bottom, rgb(27, 0, 84), rgb(0, 0, 0));
+  background-image: radial-gradient(at bottom, rgb(27, 0, 84), rgb(0, 0, 0))
 }
 
 main{
-	margin: 6em 2em;
-	
 	position: relative;
+	padding-top: 10em;
 }
 .mainContainer{
-	height: 70vh;
 	display: grid;
 	align-content: center;
 }
-#photoContainer{
+#photoContainer, #photoContainerGrid{
 	list-style-type: none;
+}
+.scrollView{
 	display: flex;
 	overflow-x: scroll;
 	padding: 0;
 	grid-column-gap: 1em;
-grid-row-gap: 1em;
-margin-top: 0;
-
-
+	grid-row-gap: 1em;
+	margin-top: 0;
+}
+#photoContainerGrid, .gridView{
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: scroll;
+	margin-bottom: 5em;
+}
+.gridView img{
+	height: auto;
+	width: 15em;
+}
+.gridView .photo-box {
+	justify-content: center;
+    display: grid;
+    align-content: center;
 }
 #photoContainer>li{
 	scroll-snap-align: start;
 	display: flex;
 }
-#photoContainer::-webkit-scrollbar{
+#photoContainerGrid li{
+	align-content: center;
+    display: grid;
+	padding: 0 0.5em;
+}
+#photoContainer::-webkit-scrollbar, #photoContainerGrid::-webkit-scrollbar{
 	width: 0;
+}
+.view-change-btns{
+	justify-content: center;
+    display: flex;
+	position: sticky;
+    top: 7em;
+    z-index: 11;
+}
+.view-change-btns img{
+	height: 1.5em;
+}
+.view-change-btns button{
+	margin: 1em 0.5em;
+	padding: 0.5em;
+    background: none;
+    border: none;
+    
+}
+.view-change-btns button:hover{
+	filter: drop-shadow(0px 0px 5px #aaf);
 }
 .gallery-item{
 	display: grid;
@@ -111,8 +160,13 @@ margin-top: 0;
 }
 a.photo-box img{
 	box-shadow: 0px 10px 20px black;
-	height: 40vh;
 	border-radius: 5px;
+}
+#photoContainer a.photo-box img{
+	height: 40vh;
+}
+#photoContainerGrid a.photo-box img{
+	width: 12em;
 }
 .photo-box{
 	text-decoration: none;
@@ -129,7 +183,7 @@ a.photo-box img{
 	display: flex;
 	font-family: micra bold;
 	font-size: 0.85em;
-	padding: 1em 0;
+	padding: 2em 0 1em;
 	text-align: center;
 	text-shadow: 0px 0px 10px black;
 	color: white;
@@ -239,7 +293,7 @@ footer{
 		padding-top: 2em;
 		
 	}
-	#photoContainer{
+	#photoContainer, #photoContainerGrid{
 		margin-bottom: 7em;
 		margin-top: 0;
 		padding-top: 0;
@@ -259,21 +313,24 @@ footer{
 		(max-device-width: 600px) and (-ms-min-device-pixel-ratio: 2),
 		(max-device-width: 600px) and (min-device-pixel-ratio: 2){
 
+
 	header{
 		display: flex;
-justify-content: space-between;
+		justify-content: space-between;
 		height: 15em;
 
 	}
-	.text-left, .text-right{
-		padding-top: 4em;
-		display: flex;
-		justify-content: center;
-		line-height: auto;
-		font-size: 0.95em;
-		text-shadow: 0 0 10px black;
-		position: relative;
-		margin: 1em 0;
+	.line-left, .line-right {
+		font-family: 'Micra', arial;
+		height: 0px;
+		border: 2px solid #aaf;
+		width: 20em;
+	}
+	.line-left {
+		margin: 6em 0em 4.5em 0;
+	}
+	.line-right {
+		margin: 6em 0em 4.5em 0;
 	}
 	h1{
 		padding: 0;
@@ -284,13 +341,13 @@ justify-content: space-between;
 		width: 8em;
 	}
 	main{
-		margin: 15em 1em;
+		margin: 1em;
+		padding-top: 12em;
 	}
 
 	h2{
-		font-size: 1.4em;
-		line-height: 1.7em;
-		left: 14%;
+		font-size: 1.265em;
+		line-height: 3em;
 		position: static;
 	}
 	.item-header{
@@ -302,17 +359,25 @@ justify-content: space-between;
       	left: 85%;
       	bottom: 2em;
 	}
-	#photoContainer{
+	#photoContainer, #photoContainerGrid{
 		padding: 0;
+	}
+	.view-change-btns img{
+		height: 2.5em;
 	}
 	.photo-box{
 		align-content: center;
 		display: grid;
+		justify-content: center;
 	}
 	a.photo-box>img{
 		width: 97vw;
-		height: auto;
+		height: auto !important;
 	}
+	#photoContainerGrid a.photo-box img{
+		width: 25em;
+	}
+
 	.purchase-link{
 		font-size: 1.5em;
 		
