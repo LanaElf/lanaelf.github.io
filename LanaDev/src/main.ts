@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import App from './LanaDev/App.vue'
-import './LanaDev/style.css'
+import App from '/LanaDev/src/App.vue'
+import '/LanaDev/src/style.css'
 
 const app = createApp(App)
 
