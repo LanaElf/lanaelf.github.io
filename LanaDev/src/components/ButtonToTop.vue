@@ -17,7 +17,7 @@ document.addEventListener('scroll', () => {
     <a :class="{'hidden': isButtonTopHidden}" id="toTop" href="#start" class="fixed bottom-10 right-10 flex justify-center hover-jump z-10 drop-shadow-md">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 1280.000000 1247.000000"
-         class="absolute bottom-1/2 translate-y-1/2 fill-rose-400 w-8 h-8">
+         class="absolute bottom-1/2 translate-y-1/2 fill-rose-300 w-8 h-8">
             <metadata>
             Created by potrace 1.15, written by Peter Selinger 2001-2017
             </metadata>

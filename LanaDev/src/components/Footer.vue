@@ -6,7 +6,7 @@ function copy(text: string) {
 }
 </script>
 <template>
-    <div class="bg-rose-radial flex">
+    <div class="bg-rose-400 flex">
         <div class="rounded-br-50
                     h-24
                    bg-white
@@ -21,7 +21,7 @@ function copy(text: string) {
 
     <div id="contacts" class="bg-white flex">
         <div class="rounded-tl-50
-                   bg-rose-radial
+                   bg-rose-400
                     flex
                     w-full
                     justify-center

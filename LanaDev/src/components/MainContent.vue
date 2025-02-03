@@ -271,18 +271,18 @@ function drawPazzle(difficultyOptions: {
         <div id="experience" class="main-block text-indents pt-28">
             <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5">Опыт</div>
 
-            <div class="font-semibold text-m">Чуть больше 1 года коммерческого опыта</div>
+            <div class="font-semibold text-m">1 год 4 месяца коммерческого опыта</div>
 
             <p>
-                Участвовала в разработке маркетплейса и других проектов в команде, верстала, писала различный функцонал на JS, в том числе библиотеки и модули, составлялазапросы к базе данных.
+                Участвую в разработке фронтенда маркетплейса для турбизнеса и других проектов в команде, адаптивно верстаю, пишу различный функцонал на JS/TS, взаимодействую с бекендом, составляю запросы к базе данных.
             </p>
             <p>
-                Написала <a class="text-violet-500 font-semibold" href="http://mlp-best-fics.cw53615.tw1.ru/" target="_blank">пет-проект</a> на Vue - небольшая библиотека тематической литературы с сортировкой по жанрам, персонажам, с несколькими темами. А этот сайт написан на Vue + TypeScript + Pinia + Taliwind за выходные, собран на Vite (вообще, я думаю, что Vue и TypeScript избыточны для малюсенького сайта, весь контент которого помещается на одну страничку, но я все же использовала их здесь для того, чтобы немного попрактиковаться с этими инструментами, ну и разрабатывать на Vue c HMR просто приятно).
+                Написала <a class="text-violet-500 font-semibold" href="http://mlp-best-fics.cw53615.tw1.ru/" target="_blank">пет-проект</a> на Vue - небольшая библиотека тематической литературы с сортировкой по жанрам, персонажам, с несколькими темами. Он писался больше года назад, и сейчас, пожалуй, я бы оформила код иначе, но он работает. А этот сайт написан на Vue + TypeScript + Pinia + Taliwind, собран на Vite (вообще, я думаю, что Vue избыточен для такого малюсенького сайта, но писать сайт с HMR так приятно...).
             </p>
         </div>
 
         <div id="code-example" class="main-block text-indents pt-28">
-            <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5 ">Пример кода</div>
+            <div class="text-rose-400 flex justify-center font-semibold text-xl pb-5">Пример кода</div>
             <p>
                 Для демонстрации некоторых моих навыков я написала мини-игру.
             </p>

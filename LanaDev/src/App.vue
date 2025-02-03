@@ -26,4 +26,4 @@ import Footer from './components/Footer.vue'
 .hidden {
   display: hidden;
 }
-</style>./components/MainContent.vue
+</style>

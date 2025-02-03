@@ -1,6 +1,6 @@
 <template>
     <div id="start" class="bg-rose-100">
-        <div class="bg-rose-radial
+        <div class="bg-rose-400
                     flex
                     justify-center
                     items-center
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-rose-radial flex relative">
+    <div class="bg-rose-400 flex relative">
         <div class="w-48 h-56 bg-white absolute right-0"></div>
         <nav class="rounded-tl-50
                     rounded-br-50
@@ -57,6 +57,7 @@
             <a href="#about-me" class="bg-rose-400 rounded-2xl px-3 py-1 hover-light">Обо мне</a>
             <a href="#contacts" class="bg-rose-400 rounded-2xl px-3 py-1 hover-light">Контакты</a>
         </nav>
+        <NavBar />
     </div>
 
     <div class="bg-rose-100 flex">
@@ -71,9 +72,6 @@
 </template>
 
 <style>
-.bg-rose-radial {
-    background-image: radial-gradient(circle, rgba(251,113,133,1) 50%, rgba(253,164,175,0.7) 100%);
-}
 .rounded-br-50 {
     border-bottom-right-radius: 100px;
 }
