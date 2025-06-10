@@ -64,7 +64,7 @@ onMounted(() => {
             <ul :style="{
                 'width': puzzleStore.chosenPuzzle.containerWidth + 'px',
                 'height': puzzleStore.chosenPuzzle.containerHeight + 'px'}"
-                class="puzzle-container flex my-10 mx-2 md:mx-0 overflow-hidden md:overflow-auto"
+                class="puzzle-container flex my-10 mx-2 md:mx-0 max-sm:overflow-hidden"
                 :class="puzzleStore.win && 'completed'"
             >
               <li v-for="detailPosition in difficulty.detailsPosition"
