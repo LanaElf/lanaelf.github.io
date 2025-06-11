@@ -24,6 +24,6 @@ import Footer from './components/Footer.vue'
   font-family: "Ubuntu Mono", monospace;
 }
 .hidden {
-  display: hidden;
+  display: none;
 }
 </style>
