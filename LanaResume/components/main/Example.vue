@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {usePuzzleStore} from "~/stores/puzzle-store";
 import {onMounted} from "vue";
-import PuzzleDetail from "~/components/PuzzleDetail.vue";
+import PuzzleDetail from "~/components/puzzle/PuzzleDetail.vue";
 
 const puzzleStore = usePuzzleStore();
 
@@ -125,7 +125,7 @@ onMounted(() => {
 
 .congrats {
   display: flex;
-  background: url('@/assets/images/heart.png');
+  background: url('assets/images/heart.png');
   background-size: contain;
   color: #fff;
   font-weight: 700;

@@ -72,7 +72,7 @@ const activeLogoName = ref('');
 
 .yoga-image {
   max-height: 350px;
-  background: url("@/assets/images/yoga.webp");
+  background: url("assets/images/yoga.webp");
   width: 100%;
   filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3)) brightness(0) saturate(100%) invert(2%) sepia(31%) saturate(7489%) hue-rotate(224deg) brightness(88%) contrast(100%);
 }

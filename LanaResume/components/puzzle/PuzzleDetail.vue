@@ -66,7 +66,7 @@ onMounted(() => {
       }"
       @click="rotationAngle += anglesStep"
   >
-    <img src="../assets/images/rotation.png"
+    <img src="../../assets/images/rotation.png"
          class="detail-rotation-button"
          alt="поверни"
     >
