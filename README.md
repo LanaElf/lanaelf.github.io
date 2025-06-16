@@ -1,8 +1,8 @@
-# LanaDev
-Мой <a href="http://lana-dev.cw53615.tw1.ru/">сайт-резюме</a>. Vue + TS + Pinia + Tailwind.
+# LanaResume
+Мой <a href="https://dev-lana.ru/">сайт-резюме</a>. Vue + Nuxt + TS + Pinia + Tailwind.
+
+# MLP best fics
+Сайт-библиотека для чтения тематической литературы. Писался около 2 лет назад на Vue. Код и дизайн теперь я бы оформила иначе, но он работает. Посмотреть можно <a href="https://mlp-fics.dev-lana.ru/">тут</a>
 
 # NovikovGallery
-Адаптивный одностраничный сайт - <a href="https://lanaelf.github.io/NovikovGallery/ ">персональная фотогалерея</a>. Vanilla JS
-
-# SnowpityTime
-Сайт-библиотека для чтения тематической литературы. Сделана на Vue, посмотреть можно <a href="http://snowpitytime.cw53615.tw1.ru/">тут</a>
+Максимально простой сайт - <a href="https://lanaelf.github.io/NovikovGallery/">персональная фотогалерея</a>, презентующий снимки фотографа-любителя. Два режима просмотра галереи, адаптивный дизайн. Писался, когда я изучала ванильный javascript и не знала никаких фреймворков
