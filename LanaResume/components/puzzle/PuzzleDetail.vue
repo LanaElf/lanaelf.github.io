@@ -51,6 +51,11 @@ function checkRotation(angle: number) {
 onMounted(() => {
   checkRotation(rotationAngle.value);
 })
+
+// Экспорт для тестов
+defineExpose({
+  rotationAngle
+})
 </script>
 
 <template>
