@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const angle = ref(0);
-
 const skillsNames: string[] = [
   'html', 'css', 'javascript', 'typescript',
   'vue', 'pinia', 'nuxt',
@@ -123,61 +121,20 @@ const activeLogoName = ref('');
   }
 }
 
-.skill-logo:nth-child(1) {
-  --i: 0;
-}
-
-.skill-logo:nth-child(2) {
-  --i: 1;
-}
-
-.skill-logo:nth-child(3) {
-  --i: 2;
-}
-
-.skill-logo:nth-child(4) {
-  --i: 3;
-}
-
-.skill-logo:nth-child(5) {
-  --i: 4;
-}
-
-.skill-logo:nth-child(6) {
-  --i: 5;
-}
-
-.skill-logo:nth-child(7) {
-  --i: 6;
-}
-
-.skill-logo:nth-child(8) {
-  --i: 7;
-}
-
-.skill-logo:nth-child(9) {
-  --i: 8;
-}
-
-.skill-logo:nth-child(10) {
-  --i: 9;
-}
-
-.skill-logo:nth-child(11) {
-  --i: 10;
-}
-
-.skill-logo:nth-child(12) {
-  --i: 11;
-}
-
-.skill-logo:nth-child(13) {
-  --i: 12;
-}
-
-.skill-logo:nth-child(14) {
-  --i: 13;
-}
+.skill-logo:nth-child(1) {--i: 0;}
+.skill-logo:nth-child(2) {--i: 1;}
+.skill-logo:nth-child(3) {--i: 2;}
+.skill-logo:nth-child(4) {--i: 3;}
+.skill-logo:nth-child(5) {--i: 4;}
+.skill-logo:nth-child(6) {--i: 5;}
+.skill-logo:nth-child(7) {--i: 6;}
+.skill-logo:nth-child(8) {--i: 7;}
+.skill-logo:nth-child(9) {--i: 8;}
+.skill-logo:nth-child(10) {--i: 9;}
+.skill-logo:nth-child(11) {--i: 10;}
+.skill-logo:nth-child(12) {--i: 11;}
+.skill-logo:nth-child(13) {--i: 12;}
+.skill-logo:nth-child(14) {--i: 13;}
 
 .skill-logo:hover {
   width: 70px;
