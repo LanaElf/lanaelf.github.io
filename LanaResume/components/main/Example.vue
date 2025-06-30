@@ -22,7 +22,7 @@ onMounted(() => {
       <br>Нужно вращать детали, пока картинка не соберется.
     </div>
 
-    <div class="bg-light p-10 md:px-0 my-7 md:rounded-2xl md:w-4/6 flex flex-col items-center relative">
+    <div class="bg-light py-10 md:px-10 my-7 md:rounded-2xl md:w-4/6 flex flex-col items-center relative">
       <div class="flex justify-center text-lg font-semibold pb-5">Выбери картинку</div>
 
       <div class="w-full overflow-x-auto relative h-40 max-sm:h-auto rose-scrollbar">
